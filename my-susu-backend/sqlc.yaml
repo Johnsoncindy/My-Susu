@@ -1,0 +1,14 @@
+# sqlc.yaml
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "./internal/database/queries/"
+    schema: "./internal/database/migrations/"
+    gen:
+      go:
+        package: "database"
+        out: "./internal/database/sqlc"
+        emit_json_tags: true
+        emit_interface: true
+        emit_empty_slices: true
+        json_tags_case_style: "camel"
